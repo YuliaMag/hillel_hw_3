@@ -10,10 +10,17 @@ if min_w > max_w or (max_w - min_w) % 2 != 0:
 else:
     print("Correct input: ")
 
-    # Print a "diamond" with given dimensions composed of '*' symbols.
+# Print a "diamond" with given dimensions composed of '*' symbols.
 
-    for i in range(min_w):
-        print(" " * (min_w - i), "*" * (i * 2 + min_w))
+    w = (max_w - min_w)
 
-    for i in range(min_w - 2, -1, -1):
-        print(" " * (min_w - i), "*" * (i * 2 + min_w))
+    for i in range(w):
+        print(" " * (w - i - 1) + "* " * (i + min_w))
+
+    for i in range(w - 2, -1, -1):
+        print(" " * (w - i - 1) + "* " * (i + min_w))
+
+
+
+
+

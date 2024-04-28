@@ -1,26 +1,29 @@
 min_w = int(input("Enter minimal width: "))
 max_w = int(input("Enter maximal width: "))
-
-# If the entered minimum width is greater than the maximum width, print a warning and terminate the program.
-# If the difference between the maximum and minimum widths is not a multiple of 2,
-# print a warning and terminate the program.
+mid_w = (max_w - min_w) / 2
 
 if min_w > max_w or (max_w - min_w) % 2 != 0:
     print("Inappropriate input!")
 else:
     print("Correct input: ")
 
-# Print a "diamond" with given dimensions composed of '*' symbols.
+y = mid_w
+a = -1
 
-    w = (max_w - min_w)
+while y <= mid_w:
+    for x in range(0, max_w):
+        if y <= x < (mid_w + min_w) and y == mid_w:
+            print("*", end="")
+            continue
 
-    for i in range(w):
-        print(" " * (w - i - 1) + "* " * (i + min_w))
+        if (x == y or x == max_w - y - 1) and y != mid_w:
+            print("*", end="")
+            continue
+        print(" ", end="")
 
-    for i in range(w - 2, -1, -1):
-        print(" " * (w - i - 1) + "* " * (i + min_w))
-
-
-
-
+    if y == 0:
+        a = 1
+    y = y + a
+    # print(y+1, end="")
+    print("")
 
